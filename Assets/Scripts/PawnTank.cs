@@ -4,12 +4,18 @@ public class PawnTank : Pawn
 {
     public override void Move(Vector3 directionToMove)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Moving!");
     }
 
     public override void Rotate(Vector3 directionToRotate)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Rotating!");
+    }
+
+    public override void Shoot()
+    {
+        // TODO: Shoot) 
+        Debug.Log("Pew pew pew");
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -723,6 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5834076148275545a4e8a216d099f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PawnTank
+  mover: {fileID: 0}
   controller: {fileID: 0}
 --- !u!1 &1961020312
 GameObject:
@@ -754,6 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControllerPlayer
   pawn: {fileID: 0}
+  inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!4 &1961020314
 Transform:
   m_ObjectHideFlags: 0

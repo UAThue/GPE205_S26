@@ -440,6 +440,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fee38d1c29c10534e9fb423b08b122c4, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1822986484}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fee38d1c29c10534e9fb423b08b122c4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1822986482}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fee38d1c29c10534e9fb423b08b122c4, type: 3}
@@ -447,7 +450,7 @@ PrefabInstance:
       addedObject: {fileID: 1822986483}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fee38d1c29c10534e9fb423b08b122c4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1822986484}
+      addedObject: {fileID: 1822986485}
   m_SourcePrefab: {fileID: 100100000, guid: fee38d1c29c10534e9fb423b08b122c4, type: 3}
 --- !u!1 &654033277
 GameObject:
@@ -725,6 +728,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PawnTank
   mover: {fileID: 0}
   controller: {fileID: 0}
+  moveSpeed: 0
+  turnSpeed: 0
+--- !u!114 &1822986485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822986478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e441a11f0888f7f4e9be5646db672f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoverTank
 --- !u!1 &1961020312
 GameObject:
   m_ObjectHideFlags: 0

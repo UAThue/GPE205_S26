@@ -14,7 +14,7 @@ public abstract class Pawn : MonoBehaviour
     public float turnSpeed;
     public Controller GetController () { return controller; }
 
-    public void Start()
+    public virtual void Start()
     {
         // Get the mover component
         mover = GetComponent<Mover>();

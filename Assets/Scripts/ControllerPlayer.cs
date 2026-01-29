@@ -20,10 +20,19 @@ public class ControllerPlayer : Controller
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Start()
     {
         // Enable my input actions
         inputActions.Enable();
+
+        // Add this to the list of players
+        GameManager.instance.players.Add(this);
+    }
+
+    public void OnDestroy()
+    {
+        // Remove this to the list of players
+        GameManager.instance.players.Remove(this);
     }
 
     // Update is called once per frame

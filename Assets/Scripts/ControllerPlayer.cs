@@ -20,7 +20,7 @@ public class ControllerPlayer : Controller
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Start()
+    public override void Start()
     {
         // Enable my input actions
         inputActions.Enable();

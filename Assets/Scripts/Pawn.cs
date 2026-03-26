@@ -2,9 +2,12 @@ using UnityEngine;
 
 public abstract class Pawn : MonoBehaviour
 {
-    protected Mover mover;
+    [HideInInspector] public Mover mover;
+    [HideInInspector] public Health health;
 
-    [HideInInspector] public Controller controller;
+   
+
+        [HideInInspector] public Controller controller;
     public abstract void Move(Vector3 directionToMove);
     public abstract void Rotate(Vector3 directionToRotate);
 
@@ -18,5 +21,8 @@ public abstract class Pawn : MonoBehaviour
     {
         // Get the mover component
         mover = GetComponent<Mover>();
+
+        // Get the Health component
+        health = GetComponent<Health>();
     }
 }

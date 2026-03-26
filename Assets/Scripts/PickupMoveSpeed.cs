@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class PickupHealth : Pickup
+public class PickupMoveSpeed : Pickup
 {
-    public static int count;
-    public PowerupHealth powerup;
-
-    public override void Start()
-    {
-        count++;
-        base.Start();
-    }
-
+    public PowerupMoveSpeed powerup;
+    
     public override void OnTriggerEnter(Collider other)
     {
         //Check if the other object has a PowerupManager;
@@ -20,17 +13,11 @@ public class PickupHealth : Pickup
         {
             // Add powerup
             otherManager.Add(powerup);
-            
+
             // Destroy this object 
             Destroy(gameObject);
         }
 
         base.OnTriggerEnter(other);
-    }
-
-    public override void OnDestroy()
-    {
-        count--;
-        base.OnDestroy();
     }
 }

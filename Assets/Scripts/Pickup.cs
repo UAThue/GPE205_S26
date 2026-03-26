@@ -21,4 +21,9 @@ public class Pickup : MonoBehaviour
     {
         // 
     }
+
+    public virtual void OnDestroy()
+    {
+
+    }
 }

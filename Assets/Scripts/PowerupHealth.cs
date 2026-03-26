@@ -7,8 +7,14 @@ public class PowerupHealth : Powerup
 
     public override void Apply(Pawn target)
     {
-        // TODO: Heal the pawn in target.
-        Debug.Log("HEALED!");
+        // Heal the pawn in target.
+        // Check if the pawn we are "healing" has a health component
+        if (target.health != null)
+        {
+            // Call its heal component
+            target.health.Heal(amountToHeal);
+        }
+
     }
 
     public override void Remove(Pawn target)

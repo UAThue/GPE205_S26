@@ -119,9 +119,11 @@ public class MapGenerator : MonoBehaviour
                     tempTile.doorEast.SetActive(false);
                 }
 
+                // Set the tile's parent in the hierarchy to this gameObject
+                tempTile.transform.parent = this.transform;
+
                 // Save it to the grid
                 grid[currentCol, currentRow] = tempTile;
-
             }
         }
     }

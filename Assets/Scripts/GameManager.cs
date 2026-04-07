@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -86,6 +87,9 @@ public class GameManager : MonoBehaviour
 
         // Move to spawnpoint
         tempTankPawn.transform.position = playerSpawnPosition;
+
+        // Add Audio Listener to player tank
+        tempTankPawn.AddComponent<AudioListener>();
 
         // Make the camera follow the player
         cameraController.lookTarget = tempTankPawn.transform;

@@ -4,10 +4,16 @@ public class Health : MonoBehaviour
 {
     [HideInInspector] public float currentHealth;
     public float maxHealth;
+    public AudioClip takeDamageSound;
+    public AudioClip healSound;
+    private AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Get the audioSource
+        audioSource = GetComponent<AudioSource>();
+
         // Tanks ALWAYS start at maxHealth
         currentHealth = maxHealth;
     }
@@ -21,6 +27,12 @@ public class Health : MonoBehaviour
     public void TakeDamage (float amount)
     {
         currentHealth = currentHealth - amount;
+
+        // Play sound
+        if (healSound != null)
+        {
+            audioSource.PlayOneShot(takeDamageSound);
+        }
 
         // Keep health between 0 and max
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
@@ -36,6 +48,12 @@ public class Health : MonoBehaviour
     {
         // Add to our current health
         currentHealth += amount;
+
+        // Play sound
+        if (healSound != null)
+        {
+            audioSource.PlayOneShot(healSound);
+        }
 
         // Keep health between 0 and max
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);

@@ -3,14 +3,18 @@ using UnityEngine;
 public class ShooterTank : Shooter
 {
     public GameObject bulletPrefab;
+    public AudioClip shootSound;
     private PawnTank pawn;
+    private AudioSource audioSource;
     public float fireRate; // How many shots per second we can fire
     private float nextShootTime;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pawn = GetComponent<PawnTank>();
+        audioSource = GetComponent<AudioSource>();
         nextShootTime = Time.time; // I can shoot again RIGHT NOW!
     }
 
@@ -36,5 +40,11 @@ public class ShooterTank : Shooter
         // Push it forward
         Rigidbody rb = bulletObject.GetComponent<Rigidbody>();
         rb.AddForce(muzzleLocation.forward * shootForce);
+
+        // Play the sound
+        if (shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
     }
 }

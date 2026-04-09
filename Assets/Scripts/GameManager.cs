@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
     public GameObject settingsObject;
     public GameObject creditsObject;
     public GameObject gameplayObject;
-    public GameObject gameOverObject; 
+    public GameObject gameOverObject;
+    [Header("Game Data")]
+    public int numberOfPlayers = 1;
 
     void Awake()
     {
@@ -153,5 +155,23 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void TEST_DELETE_ME() {
+
+        Camera newCamera;
+        newCamera = GetComponent<Camera>(); 
+
+        Rect newRect = new Rect();
+        newRect.x = 0.5f;
+        newRect.y = 0.0f;
+        newRect.width = 0.5f;
+        newRect.height = 1.0f;
+
+
+        newCamera.rect = newRect;
+        
+
+     }
+
 
 }

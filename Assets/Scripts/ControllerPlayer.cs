@@ -23,7 +23,8 @@ public class ControllerPlayer : Controller
     public override void Start()
     {
         // Enable my input actions
-        inputActions.Enable();
+        inputActions.FindActionMap("Player").Enable();
+        inputActions.FindActionMap("PlayerTwo").Enable();
 
         // Add this to the list of players
         GameManager.instance.players.Add(this);
@@ -41,6 +42,4 @@ public class ControllerPlayer : Controller
         // Do what the parent class (Controller) does on Update
         base.Update();
     }
-
-
 }

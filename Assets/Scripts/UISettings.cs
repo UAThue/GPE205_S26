@@ -1,16 +1,46 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class UISettings : MonoBehaviour
 {
     public AudioMixer mainAudioMixer;
     public Slider mainVolumeSlider;
+    public TMP_Text numberOfPlayersButtonText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         OnMainVolumeSliderChange();
+    }
+
+    public void OnPlayersButtonClick()
+    {
+        switch (GameManager.instance.numberOfPlayers)
+        {
+            case 1:
+                GameManager.instance.numberOfPlayers = 2;
+                SetPlayerButtonText();
+                break;
+            case 2:
+                GameManager.instance.numberOfPlayers = 4;
+                SetPlayerButtonText();
+                break;
+            case 4:
+                GameManager.instance.numberOfPlayers = 1;
+                SetPlayerButtonText();
+                break;
+            default:
+                GameManager.instance.numberOfPlayers = 1;
+                SetPlayerButtonText();
+                break;
+        }
+    }
+
+    public void SetPlayerButtonText()
+    {
+        numberOfPlayersButtonText.text = "" + GameManager.instance.numberOfPlayers;
     }
 
     public void OnMainVolumeSliderChange ()
